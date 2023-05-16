@@ -35,5 +35,5 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          author_email: ${{ secrets.GH_EMAIL }}
+          author_email: "pennywise.txt@gmail.com"
           author_name: "eggy4prlnt"
