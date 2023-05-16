@@ -1,31 +1,39 @@
 name: Commitmen
+
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches:
-      - master
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   schedule:
-    - cron: '1 * * * *'
+    - cron: '1 * * * *' # See https://crontab.guru/
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  auto_commit:
-    runs-on: ubuntu-latest
+  # This workflow contains a single job called "update"
+  update:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: Modify LAST_UPDATED file
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Update File
         run: |
           d=`date '+%Y-%m-%dT%H:%M:%SZ'`
           echo $d > LAST_UPDATED
-      - name: Commit changes
-        run: |
-          git config --local user.email "pennywise.txt@gmail.com"
-          git config --local user.name "eggy4prlnt"
-          git add -A
-          git commit -m "c 0 m m 1 t"
-      - name: Push Back
-        uses: ad-m/github-push-action@v0.5.0
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
-          force: true
-          directory: '.'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          author_email: ${{ secrets.GH_EMAIL }}
+          author_name: "eggy4prlnt"
