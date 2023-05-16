@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '1 * * * *' # See https://crontab.guru/
+    - cron: '0 6,9,12,15 * * *' # See https://crontab.guru/
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
