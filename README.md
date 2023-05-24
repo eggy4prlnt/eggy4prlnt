@@ -13,7 +13,7 @@ class Profile:
     def __init__(self):
         self.codename = ["Asℓan", "Luc1pher"]
         self.fullname = "Egi Aprilianto" 
-        self.info     = "Cyber Security Entusiast"
+        self.info     = "Cyber Security Enthusiast"
         self.age      = 19
 ```
 
