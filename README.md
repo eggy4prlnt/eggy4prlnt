@@ -4,14 +4,14 @@
 
 ###
 
-<h3 align="center">Known as Luc1pher</h3>
+<h3 align="center">Known as Asln</h3>
 
 ###
 
 ```python
 class Profile:
     def __init__(self):
-        self.codename = ["Asℓan", "Luc1pher"]
+        self.codename = "Asℓan"
         self.fullname = "Egi Aprilianto" 
         self.info     = "Cyber Security Enthusiast"
         self.age      = 19
