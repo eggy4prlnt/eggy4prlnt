@@ -2,12 +2,6 @@
   <img height="150" src="https://raw.githubusercontent.com/eggy4prlnt/eggy4prlnt/main/L.png"  />
 </div>
 
-###
-
-<h3 align="center">Known as Asln</h3>
-
-###
-
 ```python
 class Profile:
     def __init__(self):
