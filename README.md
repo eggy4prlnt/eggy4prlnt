@@ -9,7 +9,6 @@ class Profile:
         self.codename = "Asℓan"
         self.fullname = "Egi Aprilianto" 
         self.info     = "Cyber Security Enthusiast"
-        self.age      = 19
 ```
 
 ###
